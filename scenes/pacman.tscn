@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi78xk1voaogj"]
+[gd_scene format=3 uid="uid://bi78xk1voaogj"]
 
-[ext_resource type="Script" uid="uid://bpmgib4cno6xj" path="res://script/character_body_2d.gd" id="1_kjyp3"]
+[ext_resource type="PackedScene" uid="uid://bi78xk1voaogj" path="res://scenes/pacman.tscn" id="1_kcrxf"]
 [ext_resource type="Texture2D" uid="uid://ckamm8wu2t74n" path="res://assets/animate/pacmanmovet.png" id="2_kjyp3"]
 
+<<<<<<< HEAD
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
 radius = 14.3178215
 
+=======
+>>>>>>> 1e06329f6cb78c9fef093cc849884c8ec2e8d177
 [sub_resource type="AtlasTexture" id="AtlasTexture_utpjb"]
 atlas = ExtResource("2_kjyp3")
 region = Rect2(0, 0, 32, 32)
@@ -28,16 +31,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="pacman" type="CharacterBody2D"]
-script = ExtResource("1_kjyp3")
+[node name="pacman" unique_id=189183068 instance=ExtResource("1_kcrxf")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_4vejd")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." index="2" unique_id=92863103]
 sprite_frames = SubResource("SpriteFrames_ceynl")
 autoplay = "default"
 frame_progress = 0.31966245
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D2" index="0" unique_id=1565102496]
