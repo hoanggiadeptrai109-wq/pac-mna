@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://ejsbe6dhwde4"]
+
+[ext_resource type="Texture2D" uid="uid://7gol4ksr1buv" path="res://assets/animate/pacmananimationsketch.png" id="1_ahngr"]
+[ext_resource type="Script" uid="uid://0u0hoy43twd3" path="res://script/pac.gd" id="1_ax1xg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ax1xg"]
+radius = 14.142136
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e68x4"]
+atlas = ExtResource("1_ahngr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avt3v"]
+atlas = ExtResource("1_ahngr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hxhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e68x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avt3v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="pac" type="CharacterBody2D"]
+script = ExtResource("1_ax1xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ax1xg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1hxhc")
+autoplay = "default"
+frame_progress = 0.5471497
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]

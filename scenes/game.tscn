@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddsocf02byylk"]
 
-[ext_resource type="PackedScene" uid="uid://bi78xk1voaogj" path="res://scenes/pacman.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ejsbe6dhwde4" path="res://scenes/pac.tscn" id="1_uwrxv"]
 
 [node name="game" type="Node2D"]
 
-[node name="pacman" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-4, -1)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 4)
+
+[node name="pac" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(-5, 0)
