@@ -11,15 +11,18 @@ func _physics_process(delta: float) -> void:
 		input_vector.x += 1
 	elif Input.is_action_just_pressed("ui_left"):
 		input_vector.x -= 1
-	
 	velocity = input_vector* 3000
 	move_and_slide()
+	
 	#huong sprite
 	if Input.is_action_just_pressed("ui_up"):
-		$Sprite2D.flip_v = false
+		$AnimatedSprite2D.rotation = 4.71
 	elif Input.is_action_just_pressed("ui_down"):
-		$Sprite2D.flip_v = true
+		$AnimatedSprite2D.rotation = 1.57
 	elif Input.is_action_just_pressed("ui_right"):
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.rotation = 0
 	elif Input.is_action_just_pressed("ui_left"):
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.rotation = 0
+	
